@@ -1,0 +1,25 @@
+.button {
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 6px 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--fade);
+  border: 1px solid;
+  background: transparent;
+  color: var(--c-text);
+}
+
+
+.downloadButton {
+  @extend .button;
+  border: 1px solid var(--c-primary);
+  font-size: var(--f-base);
+  font-weight: var(--f-bold);
+  padding: 8px 20px 8px 20px;
+
+  &:hover {
+    background-color: var(--c-primary);
+  }
+}

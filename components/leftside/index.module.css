@@ -15,8 +15,20 @@
   z-index: -1;
 }
 
+.dowloadSection {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  bottom: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+
 .leftSide {
   position: relative;
   width: 50%;
   height: 100vh;
 }
+
+
