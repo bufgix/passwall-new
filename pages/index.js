@@ -4,6 +4,7 @@ import StoreContext from '../store'
 
 import Layout from '../components/layout'
 import LeftSide from '../components/leftside'
+import RightSide from '../components/rightside'
 
 function HomePage() {
   const store = useContext(StoreContext)
@@ -15,7 +16,7 @@ function HomePage() {
       </Head>
       <Layout className="contentBody">
         <LeftSide />
-        <div>alskdjas</div>
+        <RightSide />
       </Layout>
     </Layout>
   )

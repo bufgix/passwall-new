@@ -15,6 +15,7 @@
 .downloadButton {
   @extend .button;
   border: 1px solid var(--c-primary);
+  background: transparent;
   font-size: var(--f-base);
   font-weight: var(--f-bold);
   padding: 8px 20px 8px 20px;
