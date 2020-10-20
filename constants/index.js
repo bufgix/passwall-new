@@ -4,12 +4,24 @@ export const THEME = {
 }
 
 export const PAGES = {
-  home: {
+  FeedBack: {
     path: '/',
-    name: 'Home'
+    name: 'Give Feedback',
+    external: false
   },
-  about: {
-    path: '/about',
-    name: 'About'
+  Contact: {
+    path: '/',
+    name: 'Contact',
+    external: false
+  },
+  Community: {
+    path: '/',
+    name: 'Community',
+    external: false
+  },
+  Twitter: {
+    path: '/',
+    name: 'Twitter',
+    external: false
   }
 }
