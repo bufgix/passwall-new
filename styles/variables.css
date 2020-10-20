@@ -1,6 +1,19 @@
 :root {
-  --c-primary: white;
-  --c-text: black;
+  --c-primary: #5707ff;
+  --c-secondary: #00ffd1;
+  --c-link: #4d91ff;
+  --c-success: #6af499;
+  --c-danger: #ff5151;
+
+  --c-black: black;
+
+  --c-dark-20: #e3e3e3;
+  --c-dark-30: #8b93a1;
+  --c-dark-40: #151c27;
+  --c-dark-50: #0a0f17;
+  --c-dark-60: #06070a;
+
+  --c-text: white;
   --fade: 120ms;
 }
 
