@@ -25,3 +25,18 @@ export const PAGES = {
     external: false
   }
 }
+
+export const DOWLOAD_LINKS = [
+  {
+    name: 'MacOS',
+    link: '#'
+  },
+  {
+    name: 'Linux',
+    link: '#'
+  },
+  {
+    name: 'Windows',
+    link: '#'
+  },
+]

@@ -3,6 +3,7 @@ import styles from './index.module.css'
 
 import Header from '../nav'
 import { DownloadButton } from '../button'
+import { DOWLOAD_LINKS } from '../../constants'
 
 export default function LeftSide() {
   return (
@@ -15,9 +16,11 @@ export default function LeftSide() {
       />
       <img className={styles.logo} src="/images/passwall-logo.png" alt="logo" />
       <div className={styles.dowloadSection}>
-        <DownloadButton>
-          <a href="#">MacOS</a>
-        </DownloadButton>
+        {DOWLOAD_LINKS.map((item) => (
+          <DownloadButton key={item.name}>
+            <a href={item.link}>{item.name}</a>
+          </DownloadButton>
+        ))}
       </div>
     </div>
   )
