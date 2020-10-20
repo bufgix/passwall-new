@@ -1,7 +1,9 @@
 .nav {
-  margin-bottom: 2rem;
+  padding: 40px 120px 0 120px;
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
 
   a {
     color: inherit;

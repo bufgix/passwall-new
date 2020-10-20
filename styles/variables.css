@@ -15,6 +15,16 @@
 
   --c-text: white;
   --fade: 120ms;
+
+  --f-base: 14px;
+
+  --f-sm:  12px;
+  --f-md: 16px;
+  --f-heading: 24px;
+  --f-heading-md: 32px;
+  --f-heading-large: 48px;
+
+  --f-hero: 64px;
 }
 
 .theme-dark {
