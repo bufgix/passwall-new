@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './index.module.css'
 
 import Header from '../nav'
-import {DownloadButton} from '../button'
+import { DownloadButton } from '../button'
 
 export default function LeftSide() {
   return (
@@ -15,7 +15,9 @@ export default function LeftSide() {
       />
       <img className={styles.logo} src="/images/passwall-logo.png" alt="logo" />
       <div className={styles.dowloadSection}>
-        <DownloadButton>MacOS</DownloadButton>
+        <DownloadButton>
+          <a href="#">MacOS</a>
+        </DownloadButton>
       </div>
     </div>
   )
