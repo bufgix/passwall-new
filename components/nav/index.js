@@ -1,8 +1,9 @@
 import React from 'react'
-import Link from 'next/link'
 import { PAGES } from '../../constants'
 
 import styles from './index.module.css'
+
+import Wlink from "../wlink"
 
 function Nav() {
   return (
@@ -10,9 +11,9 @@ function Nav() {
       {Object.keys(PAGES).map((key) => {
         const PAGE = PAGES[key]
         return (
-          <Link href={PAGE.path} key={`link-${key}`}>
-            <a>{PAGE.name}</a>
-          </Link>
+          <Wlink href={PAGE.path} key={`link-${key}`}>
+            {PAGE.name}
+          </Wlink>
         )
       })}
     </nav>
