@@ -73,7 +73,7 @@ export const PAID_TIER = [
   },
   {
     name: 'Private Notes',
-    icon: Icons.ClipboardCheck
+    icon: Icons.ClipboardList
   },
   {
     name: 'Servers',
