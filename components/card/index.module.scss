@@ -1,7 +1,7 @@
 .cardWrapper {
   display: flex;
   flex-direction: column;
-  height: 200px;
+  min-height: 520px;
   width: 100%;
 
   border-radius: 16px;
@@ -11,14 +11,40 @@
     background-clip: content-box, border-box;
     border: double 2px transparent;
 
-    background-image: linear-gradient(var(--c-dark-60), var(--c-dark-60)),
+    background-image: linear-gradient(var(--c-dark-50), var(--c-dark-50)),
       linear-gradient(45deg, #00ffd1, #5707ff);
   }
 
   &:global(.normal) {
     border: 2px solid;
     border-image-slice: 1;
+    background: var(--c-dark-50);
 
     border-color: #10161f;
+  }
+}
+
+.cardHeader {
+  padding: 32px;
+}
+
+.cardBody {
+  padding: 0;
+  list-style-type: none;
+
+  li {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+
+    svg {
+      margin-right: 8px;
+      color: var(--c-secondary);
+    }
+  }
+
+  li:nth-child(odd) {
+    background-color: var(--c-dark-60);
   }
 }

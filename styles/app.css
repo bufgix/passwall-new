@@ -34,13 +34,14 @@ a {
 }
 
 .contentBody {
-  display: flex;;
+  display: flex;
   flex-direction: row;
 }
 
 .cards {
+  margin-top: 48px;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  row-gap: 32px;
+  grid-gap: 32px;
 }
