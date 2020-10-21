@@ -2,6 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import SiteConfig from '../site.config'
 import { StoreProvider } from '../store'
+import { MobileNav } from '../components/nav'
 
 import '../styles/app.css'
 
@@ -36,6 +37,7 @@ export default function MyApp({ Component, pageProps }) {
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
       </Head>
       <StoreProvider>
+        <MobileNav />
         <Component {...pageProps} />
       </StoreProvider>
     </>

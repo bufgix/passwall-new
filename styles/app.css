@@ -35,21 +35,45 @@ a {
 
 .contentBody {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+
+  @media (--d) {
+    flex-direction: row;
+  }
 }
 
 .cards {
   margin-top: 48px;
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 32px;
+
+  @media (--d) {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .container {
   width: 100%;
   height: 100%;
-  padding: 64px 30px;
+  padding: 10px 30px;
+  overflow-x: auto;
+
+  @media (--md) {
+    padding: 0px 64px;
+  }
+}
+
+.containerIndex {
+  width: 100%;
+  height: 100%;
+  padding: 10px 30px;
+  overflow-x: auto;
+
+  @media (--d) {
+    padding: 100px 30px;
+  }
 
   @media (--md) {
     padding: 64px;

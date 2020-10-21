@@ -19,7 +19,7 @@ function HomePage() {
       <Layout className="contentBody">
         <LeftSide />
         <RightSide>
-          <div className="container">
+          <div className="containerIndex">
             <Text tag="h1" theme="heromd">
               Start Keeping <br /> Your Passwords Safe
             </Text>

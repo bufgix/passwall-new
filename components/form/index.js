@@ -62,7 +62,6 @@ export default function Form({ formType = FORM_TYPES.FREE }) {
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(schema)
   })
-  console.log(errors)
   const onSubmit = (data) => {
     console.log(errors)
     console.log(data)
