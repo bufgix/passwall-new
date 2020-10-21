@@ -10,6 +10,11 @@ import * as Icons from 'heroicons-react'
 import Text from '../text'
 import Button from '../button'
 
+export const FORM_TYPES = {
+  FREE: 'FREE',
+  PRO: 'PRO'
+}
+
 const schema = yup.object().shape({
   name: yup.string().required(),
   email: yup.string().email().required(),
@@ -52,7 +57,7 @@ export function TextInput({
   )
 }
 
-export default function Form() {
+export default function Form({ formType = FORM_TYPES.FREE }) {
   const router = useRouter()
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(schema)
@@ -70,8 +75,10 @@ export default function Form() {
       method="POST"
     >
       <Icons.ArrowLeft onClick={() => router.back()} />
-      <Text tag="h3" theme="heromd" fancy>
-        Create a PRO account
+      <Text tag="h3" theme="heromd" fancy={formType === FORM_TYPES.PRO}>
+        {formType === FORM_TYPES.PRO
+          ? 'Create a PRO account'
+          : 'Create a free account'}
       </Text>
       <TextInput
         label="Full Name"
@@ -103,7 +110,11 @@ export default function Form() {
         errors={errors.passwordConfirm}
       />
       <Button type="submit" value="Submit">
-        <Text tag="p">go</Text>
+        <Text tag="p" theme="regular" className={styles.btn}>
+          {formType === FORM_TYPES.PRO
+            ? 'Continue to Payment'
+            : 'Create My Account'}
+        </Text>
       </Button>
     </form>
   )

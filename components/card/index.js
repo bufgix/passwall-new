@@ -67,7 +67,7 @@ export function PaidCard() {
           })}
         </ul>
       </div>
-      <Wlink className={styles.link} href="/paid" external={false}>
+      <Wlink className={styles.link} href="/pro" external={false}>
         <Button className={styles.cardBtn}>
           <Text tag="p" theme="medium">
             SIGN UP

@@ -4,7 +4,7 @@
   padding: 50px 30px;
 
   @media (--md) {
-    padding: 30px 100px;
+    padding: 10px 100px;
   }
   svg {
     cursor: pointer;
@@ -12,6 +12,7 @@
 
   h3 {
     margin-top: 32px;
+    margin-bottom: 32px;
   }
 }
 
@@ -68,4 +69,8 @@
     color: var(--c-danger);
     margin-top: 4px;
   }
+}
+
+.btn {
+  font-weight: 700;
 }
