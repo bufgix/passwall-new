@@ -1,12 +1,24 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 import { useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
+import * as yup from 'yup'
 import cn from 'classnames'
 import styles from './index.module.scss'
 import * as Icons from 'heroicons-react'
 
 import Text from '../text'
 import Button from '../button'
+
+const schema = yup.object().shape({
+  name: yup.string().required(),
+  email: yup.string().email().required(),
+  password: yup.string().required(),
+  passwordConfirm: yup
+    .string()
+    .oneOf([yup.ref('password'), null], 'Passwords must match')
+    .required()
+})
 
 export function TextInput({
   label,
@@ -15,6 +27,7 @@ export function TextInput({
   className,
   placeholder,
   errors,
+  type = 'text',
   ...props
 }) {
   return (
@@ -27,6 +40,7 @@ export function TextInput({
         placeholder={placeholder}
         ref={register}
         className={cn({ error: errors })}
+        type={type}
         {...props}
       />
       {errors && (
@@ -40,14 +54,21 @@ export function TextInput({
 
 export default function Form() {
   const router = useRouter()
-  const { register, handleSubmit, errors } = useForm()
-
+  const { register, handleSubmit, errors } = useForm({
+    resolver: yupResolver(schema)
+  })
+  console.log(errors)
   const onSubmit = (data) => {
+    console.log(errors)
     console.log(data)
   }
 
   return (
-    <form className={styles.Form} onSubmit={handleSubmit(onSubmit)}>
+    <form
+      className={styles.Form}
+      onSubmit={handleSubmit(onSubmit)}
+      method="POST"
+    >
       <Icons.ArrowLeft onClick={() => router.back()} />
       <Text tag="h3" theme="heromd" fancy>
         Create a PRO account
@@ -56,13 +77,30 @@ export default function Form() {
         label="Full Name"
         name="name"
         placeholder="John Doe"
-        register={register({
-          required: {
-            value: true,
-            message: 'Name is required'
-          }
-        })}
+        register={register()}
         errors={errors.name}
+      />
+      <TextInput
+        label="E-Mail"
+        name="email"
+        placeholder="hello@passwall.io"
+        type="email"
+        register={register()}
+        errors={errors.email}
+      />
+      <TextInput
+        label="Master Password"
+        name="password"
+        type="password"
+        register={register()}
+        errors={errors.password}
+      />
+      <TextInput
+        label="Master Password Verify"
+        name="passwordConfirm"
+        type="password"
+        register={register()}
+        errors={errors.passwordConfirm}
       />
       <Button type="submit" value="Submit">
         <Text tag="p">go</Text>

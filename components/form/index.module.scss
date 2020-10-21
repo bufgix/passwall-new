@@ -1,10 +1,10 @@
 .Form {
   display: flex;
   flex-direction: column;
-  padding: 100px 30px;
+  padding: 50px 30px;
 
-  @media(--md) {
-    padding: 100px
+  @media (--md) {
+    padding: 30px 100px;
   }
   svg {
     cursor: pointer;
