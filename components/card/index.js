@@ -1,36 +1,35 @@
 import React from 'react'
 import cn from 'classnames'
-import * as Icons from 'heroicons-react'
 import styles from './index.module.scss'
 
 import Text from '../text'
+import Button from '../button'
+import { FREE_TIER } from '../../constants'
 
 export function FreeCard() {
   return (
     <>
-      <div className={cn(styles.cardHeader)}>
-        <Text tag="H2" theme="heromd">
-          Free
-        </Text>
+      <div>
+        <div className={cn(styles.cardHeader)}>
+          <Text tag="H2" theme="heromd">
+            Free
+          </Text>
+        </div>
+        <ul className={cn(styles.cardBody)}>
+          {FREE_TIER.map((item) => {
+            const Icon = item.icon
+            return (
+              <li>
+                <Icon />
+                <Text tag="p" theme="medium">
+                  {item.name}
+                </Text>
+              </li>
+            )
+          })}
+        </ul>
       </div>
-      <ul className={cn(styles.cardBody)}>
-        <li>
-          <Icons.Users/>
-          <Text tag="p" theme="medium">
-            Logins
-          </Text>
-        </li>
-        <li>
-          <Text tag="p" theme="medium">
-            Logins
-          </Text>
-        </li>
-        <li>
-          <Text tag="p" theme="medium">
-            Logins
-          </Text>
-        </li>
-      </ul>
+      <Button className={styles.cardBtn}>asdsd</Button>
     </>
   )
 }

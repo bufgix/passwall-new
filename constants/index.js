@@ -1,3 +1,5 @@
+import * as Icons from 'heroicons-react'
+
 export const THEME = {
   LIGHT: 'theme-light',
   DARK: 'theme-dark'
@@ -38,5 +40,20 @@ export const DOWLOAD_LINKS = [
   {
     name: 'Windows',
     link: '#'
+  }
+]
+
+export const FREE_TIER = [
+  {
+    name: 'Logins',
+    icon: Icons.Users
   },
+  {
+    name: 'Easy Import',
+    icon: Icons.CloudDownload
+  },
+  {
+    name: 'Some Other Pro',
+    icon: Icons.Users
+  }
 ]

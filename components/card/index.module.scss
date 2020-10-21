@@ -1,6 +1,7 @@
 .cardWrapper {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   min-height: 520px;
   width: 100%;
 
@@ -47,4 +48,8 @@
   li:nth-child(odd) {
     background-color: var(--c-dark-60);
   }
+}
+
+.cardBtn {
+  
 }
