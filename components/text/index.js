@@ -14,13 +14,17 @@ const themeMap = {
 export default function Text({
   tag = 'h3',
   theme = 'text',
+  fancy = false,
   className,
   children,
   ...props
 }) {
   const Tag = tag
   return (
-    <Tag className={cn(styles.text, themeMap[theme], className)} {...props}>
+    <Tag
+      className={cn(styles.text, themeMap[theme], { fancy }, className)}
+      {...props}
+    >
       {children}
     </Tag>
   )

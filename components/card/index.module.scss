@@ -26,6 +26,16 @@
 
 .cardHeader {
   padding: 32px;
+
+  &:global(.pro) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      font-size: var(--f-heading-md);
+    }
+  }
 }
 
 .cardBody {

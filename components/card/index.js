@@ -42,9 +42,12 @@ export function PaidCard() {
   return (
     <>
       <div>
-        <div className={cn(styles.cardHeader)}>
-          <Text tag="H2" theme="heromd">
+        <div className={cn(styles.cardHeader, 'pro')}>
+          <Text tag="H2" theme="heromd" fancy>
             PRO
+          </Text>
+          <Text>
+            <span>$2</span>/month
           </Text>
         </div>
         <ul className={cn(styles.cardBody)}>
