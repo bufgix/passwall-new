@@ -1,4 +1,6 @@
 import React from 'react'
+import * as Icons from 'heroicons-react'
+
 import styles from './index.module.css'
 
 import Header from '../nav'
@@ -19,6 +21,7 @@ export default function LeftSide() {
         {DOWLOAD_LINKS.map((item) => (
           <DownloadButton key={item.name}>
             <a href={item.link}>{item.name}</a>
+            <Icons.Download width={15} height={15}/>
           </DownloadButton>
         ))}
       </div>

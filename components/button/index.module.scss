@@ -18,9 +18,17 @@
   background: transparent;
   font-size: var(--f-base);
   font-weight: var(--f-bold);
-  padding: 8px 20px 8px 20px;
+  padding: 8px 15px 8px 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
     background-color: var(--c-primary);
+  }
+
+  a {
+    margin-right: 10px;
   }
 }
