@@ -37,3 +37,10 @@ a {
   display: flex;;
   flex-direction: row;
 }
+
+.cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 32px;
+}

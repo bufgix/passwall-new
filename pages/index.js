@@ -6,6 +6,7 @@ import Layout from '../components/layout'
 import LeftSide from '../components/leftside'
 import RightSide from '../components/rightside'
 import Text from '../components/text'
+import Card from '../components/card'
 
 function HomePage() {
   const store = useContext(StoreContext)
@@ -21,6 +22,10 @@ function HomePage() {
           <Text tag="h1" theme="heromd">
             Start Keeping <br /> Your Passwords Safe
           </Text>
+          <div className="cards">
+            <Card>trasfdsa</Card>
+            <Card border="fancy">trasfdsa</Card>
+          </div>
         </RightSide>
       </Layout>
     </Layout>
