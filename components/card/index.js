@@ -4,7 +4,7 @@ import styles from './index.module.scss'
 
 import Text from '../text'
 import Button from '../button'
-import { FREE_TIER } from '../../constants'
+import { FREE_TIER, PAID_TIER } from '../../constants'
 
 export function FreeCard() {
   return (
@@ -30,7 +30,41 @@ export function FreeCard() {
         </ul>
       </div>
       <Button className={styles.cardBtn}>
-        <Text tag="p" theme="medium">SIGN UP</Text>
+        <Text tag="p" theme="medium">
+          SIGN UP
+        </Text>
+      </Button>
+    </>
+  )
+}
+
+export function PaidCard() {
+  return (
+    <>
+      <div>
+        <div className={cn(styles.cardHeader)}>
+          <Text tag="H2" theme="heromd">
+            PRO
+          </Text>
+        </div>
+        <ul className={cn(styles.cardBody)}>
+          {PAID_TIER.map((item) => {
+            const Icon = item.icon
+            return (
+              <li>
+                <Icon />
+                <Text tag="p" theme="medium">
+                  {item.name}
+                </Text>
+              </li>
+            )
+          })}
+        </ul>
+      </div>
+      <Button className={styles.cardBtn}>
+        <Text tag="p" theme="medium">
+          SIGN UP
+        </Text>
       </Button>
     </>
   )

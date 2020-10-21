@@ -57,3 +57,26 @@ export const FREE_TIER = [
     icon: Icons.Users
   }
 ]
+
+export const PAID_TIER = [
+  {
+    name: 'Everything in free',
+    icon: Icons.BadgeCheck
+  },
+  {
+    name: 'Bank Accounts',
+    icon: Icons.BadgeCheck
+  },
+  {
+    name: 'Emails',
+    icon: Icons.AtSymbol
+  },
+  {
+    name: 'Private Notes',
+    icon: Icons.ClipboardCheck
+  },
+  {
+    name: 'Servers',
+    icon: Icons.Terminal
+  }
+]
