@@ -1,8 +1,8 @@
 .content {
+  position: relative;
   height: 100vh;
   width: 50%;
   display: flex;
   flex-direction: column;
-  padding: 64px;
   background: var(--c-dark-60);
 }

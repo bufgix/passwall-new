@@ -19,16 +19,18 @@ function HomePage() {
       <Layout className="contentBody">
         <LeftSide />
         <RightSide>
-          <Text tag="h1" theme="heromd">
-            Start Keeping <br /> Your Passwords Safe
-          </Text>
-          <div className="cards">
-            <Card>
-              <FreeCard />
-            </Card>
-            <Card border="fancy">
-              <PaidCard />
-            </Card>
+          <div className="container">
+            <Text tag="h1" theme="heromd">
+              Start Keeping <br /> Your Passwords Safe
+            </Text>
+            <div className="cards">
+              <Card>
+                <FreeCard />
+              </Card>
+              <Card border="fancy">
+                <PaidCard />
+              </Card>
+            </div>
           </div>
         </RightSide>
       </Layout>
