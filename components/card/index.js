@@ -5,6 +5,7 @@ import styles from './index.module.scss'
 import Text from '../text'
 import Button from '../button'
 import { FREE_TIER, PAID_TIER } from '../../constants'
+import Wlink from '../wlink'
 
 export function FreeCard() {
   return (
@@ -29,11 +30,13 @@ export function FreeCard() {
           })}
         </ul>
       </div>
-      <Button className={styles.cardBtn}>
-        <Text tag="p" theme="medium">
-          SIGN UP
-        </Text>
-      </Button>
+      <Wlink className={styles.link} href="/free" external={false}>
+        <Button className={styles.cardBtn}>
+          <Text tag="p" theme="medium">
+            SIGN UP
+          </Text>
+        </Button>
+      </Wlink>
     </>
   )
 }
@@ -64,11 +67,13 @@ export function PaidCard() {
           })}
         </ul>
       </div>
-      <Button className={styles.cardBtn}>
-        <Text tag="p" theme="medium">
-          SIGN UP
-        </Text>
-      </Button>
+      <Wlink className={styles.link} href="/paid" external={false}>
+        <Button className={styles.cardBtn}>
+          <Text tag="p" theme="medium">
+            SIGN UP
+          </Text>
+        </Button>
+      </Wlink>
     </>
   )
 }

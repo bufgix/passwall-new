@@ -59,13 +59,17 @@
   }
 }
 
-.cardBtn {
+.link {
   width: 70%;
   align-self: center;
   margin-bottom: 25px;
   margin-top: 50px;
 
-  p {
-    font-weight: 600;
+  .cardBtn {
+    width: 100%;
+
+    p {
+      font-weight: 600;
+    }
   }
 }
