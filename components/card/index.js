@@ -11,7 +11,7 @@ export function FreeCard() {
     <>
       <div>
         <div className={cn(styles.cardHeader)}>
-          <Text tag="H2" theme="heromd">
+          <Text tag="h2" theme="heromd">
             Free
           </Text>
         </div>
@@ -43,7 +43,7 @@ export function PaidCard() {
     <>
       <div>
         <div className={cn(styles.cardHeader, 'pro')}>
-          <Text tag="H2" theme="heromd" fancy>
+          <Text tag="h2" theme="heromd" fancy>
             PRO
           </Text>
           <Text>
