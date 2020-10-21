@@ -29,7 +29,9 @@ export function FreeCard() {
           })}
         </ul>
       </div>
-      <Button className={styles.cardBtn}>asdsd</Button>
+      <Button className={styles.cardBtn}>
+        <Text tag="p" theme="medium">SIGN UP</Text>
+      </Button>
     </>
   )
 }

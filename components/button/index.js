@@ -13,7 +13,7 @@ export function DownloadButton({ children, className, ...props }) {
 
 function Button({ children, className, ...props }) {
   return (
-    <button type="button" className={cn(styles.button, className)} {...props}>
+    <button type="button" className={cn(styles.normal, className)} {...props}>
       {children}
     </button>
   )

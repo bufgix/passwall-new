@@ -1,6 +1,6 @@
 .button {
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 12px;
   padding: 6px 10px;
   display: inline-flex;
   align-items: center;
@@ -11,6 +11,14 @@
   color: var(--c-text);
 }
 
+.normal {
+  @extend .button;
+  background: var(--c-primary);
+  border: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+}
 
 .downloadButton {
   @extend .button;
