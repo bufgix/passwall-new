@@ -130,14 +130,13 @@ export default function Form({ formType = FORM_TYPES.FREE }) {
       paid({
         email,
         successCallback: (data) => {
-          console.log('Success', data)
           registerAPI({ name, email, password })
         },
         closeCallback: (reason) => {
           console.warn(reason)
         }
       })
-      return
+      return;
     } else {
       registerAPI({ name, email, password })
     }
