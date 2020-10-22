@@ -61,7 +61,7 @@ a {
   overflow-x: auto;
 
   @media (--md) {
-    padding: 0px 64px;
+    padding: 40px 64px;
   }
 }
 
