@@ -79,3 +79,11 @@ a {
     padding: 64px;
   }
 }
+
+.Toastify__toast{
+  display: flex;
+  flex-direction: column;
+  padding: 16px 24px 0px 24px;
+  background-color: var(--c-dark-50);
+  border-radius: 8px;
+}

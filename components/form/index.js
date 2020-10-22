@@ -2,6 +2,7 @@ import React from 'react'
 import { useRouter } from 'next/router'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
+import { ToastContainer, toast } from 'react-toastify'
 import * as yup from 'yup'
 import cn from 'classnames'
 import styles from './index.module.scss'
@@ -11,6 +12,27 @@ import Text from '../text'
 import Button from '../button'
 import Api from '../../api'
 import CryptoJS from 'crypto-js'
+
+function ErrorMsg({ messages = [] }) {
+  return (
+    <div className={styles.error}>
+      <Text className={styles.errorHead} tag="h5" theme="regular">
+        Oops!
+      </Text>
+      {messages && (
+        <ul>
+          {messages.map((item, index) => (
+            <li key={index}>
+              <Text tag="p" theme="small">
+                {`* ${item}`}
+              </Text>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  )
+}
 
 export const FORM_TYPES = {
   FREE: 'FREE',
@@ -64,6 +86,7 @@ export default function Form({ formType = FORM_TYPES.FREE }) {
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(schema)
   })
+
   const onSubmit = ({ name, email, password }) => {
     if (formType == FORM_TYPES.FREE) {
       Api.post(`/auth/signup?api_key=${process.env.NEXT_PUBLIC_API_KEY}`, {
@@ -77,61 +100,66 @@ export default function Form({ formType = FORM_TYPES.FREE }) {
         .catch((err) => {
           if (err.response.status === 400) {
             console.log(err.response.data.errors)
+            toast(<ErrorMsg messages={err.response.data.errors} />)
           } else {
-            console.log('Server Error')
+            console.error(err);
+            toast(<ErrorMsg messages={['Server Error']} />)
           }
         })
     }
   }
 
   return (
-    <form
-      className={styles.Form}
-      onSubmit={handleSubmit(onSubmit)}
-      method="POST"
-    >
-      <Icons.ArrowLeft onClick={() => router.back()} />
-      <Text tag="h3" theme="heromd" fancy={formType === FORM_TYPES.PRO}>
-        {formType === FORM_TYPES.PRO
-          ? 'Create a PRO account'
-          : 'Create a free account'}
-      </Text>
-      <TextInput
-        label="Full Name"
-        name="name"
-        placeholder="John Doe"
-        register={register()}
-        errors={errors.name}
-      />
-      <TextInput
-        label="E-Mail"
-        name="email"
-        placeholder="hello@passwall.io"
-        type="email"
-        register={register()}
-        errors={errors.email}
-      />
-      <TextInput
-        label="Master Password"
-        name="password"
-        type="password"
-        register={register()}
-        errors={errors.password}
-      />
-      <TextInput
-        label="Master Password Verify"
-        name="passwordConfirm"
-        type="password"
-        register={register()}
-        errors={errors.passwordConfirm}
-      />
-      <Button type="submit" value="Submit">
-        <Text tag="p" theme="regular" className={styles.btn}>
+    <>
+      <ToastContainer hideProgressBar />
+      <form
+        className={styles.Form}
+        onSubmit={handleSubmit(onSubmit)}
+        method="POST"
+      >
+        <Icons.ArrowLeft onClick={() => router.back()} />
+        <Text tag="h3" theme="heromd" fancy={formType === FORM_TYPES.PRO}>
           {formType === FORM_TYPES.PRO
-            ? 'Continue to Payment'
-            : 'Create My Account'}
+            ? 'Create a PRO account'
+            : 'Create a free account'}
         </Text>
-      </Button>
-    </form>
+        <TextInput
+          label="Full Name"
+          name="name"
+          placeholder="John Doe"
+          register={register()}
+          errors={errors.name}
+        />
+        <TextInput
+          label="E-Mail"
+          name="email"
+          placeholder="hello@passwall.io"
+          type="email"
+          register={register()}
+          errors={errors.email}
+        />
+        <TextInput
+          label="Master Password"
+          name="password"
+          type="password"
+          register={register()}
+          errors={errors.password}
+        />
+        <TextInput
+          label="Master Password Verify"
+          name="passwordConfirm"
+          type="password"
+          register={register()}
+          errors={errors.passwordConfirm}
+        />
+        <Button type="submit" value="Submit">
+          <Text tag="p" theme="regular" className={styles.btn}>
+            {formType === FORM_TYPES.PRO
+              ? 'Continue to Payment'
+              : 'Create My Account'}
+          </Text>
+        </Button>
+      </form>
+    </>
   )
 }

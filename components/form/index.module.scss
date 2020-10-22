@@ -78,3 +78,17 @@
 .btn {
   font-weight: 700;
 }
+
+.error {
+  h5 {
+    color: var(--c-danger) !important;
+    margin-bottom: 4px;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+}
+
+

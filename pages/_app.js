@@ -4,6 +4,7 @@ import SiteConfig from '../site.config'
 import { StoreProvider } from '../store'
 import { MobileNav } from '../components/nav'
 
+import 'react-toastify/dist/ReactToastify.min.css'
 import '../styles/app.css'
 
 export default function MyApp({ Component, pageProps }) {
