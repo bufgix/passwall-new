@@ -8,6 +8,7 @@ class MyDocument extends Document {
     return { ...initialProps }
   }
 
+
   render() {
     return (
       <Html lang={SiteConfig.lang}>
@@ -37,9 +38,10 @@ class MyDocument extends Document {
               />
             </>
           )}
+          <script src="https://cdn.paddle.com/paddle/paddle.js"></script>
         </Head>
         <body>
-          <Main />
+          <Main />Ï
           <NextScript />
         </body>
       </Html>

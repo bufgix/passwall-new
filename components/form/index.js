@@ -87,25 +87,59 @@ export default function Form({ formType = FORM_TYPES.FREE }) {
     resolver: yupResolver(schema)
   })
 
-  const onSubmit = ({ name, email, password }) => {
-    if (formType == FORM_TYPES.FREE) {
-      Api.post(`/auth/signup?api_key=${process.env.NEXT_PUBLIC_API_KEY}`, {
-        name,
-        email,
-        master_password: CryptoJS.SHA256(password).toString()
+  React.useEffect(() => {
+    Paddle.Setup({ vendor: 121559 })
+  }, [])
+
+  const paid = ({
+    email,
+    successCallback = () => {},
+    closeCallback = () => {}
+  }) => {
+    const Paddle = window.Paddle
+    Paddle.Checkout.open({
+      product: 630862,
+      email,
+      successCallback,
+      closeCallback
+    })
+  }
+
+  const registerAPI = ({ name, email, password }) => {
+    Api.post(`/auth/signup?api_key=${process.env.NEXT_PUBLIC_API_KEY}`, {
+      name,
+      email,
+      master_password: CryptoJS.SHA256(password).toString()
+    })
+      .then((data) => {
+        router.push('/thankyou')
       })
-        .then((data) => {
-          router.push('/thankyou')
-        })
-        .catch((err) => {
-          if (err.response.status === 400) {
-            console.log(err.response.data.errors)
-            toast(<ErrorMsg messages={err.response.data.errors} />)
-          } else {
-            console.error(err);
-            toast(<ErrorMsg messages={['Server Error']} />)
-          }
-        })
+      .catch((err) => {
+        if (err.response.status === 400) {
+          console.log(err.response.data.errors)
+          toast(<ErrorMsg messages={err.response.data.errors} />)
+        } else {
+          console.error(err)
+          toast(<ErrorMsg messages={['Server Error']} />)
+        }
+      })
+  }
+
+  const onSubmit = ({ name, email, password }) => {
+    if (formType === FORM_TYPES.PRO) {
+      paid({
+        email,
+        successCallback: (data) => {
+          console.log('Success', data)
+          registerAPI({ name, email, password })
+        },
+        closeCallback: (reason) => {
+          console.warn(reason)
+        }
+      })
+      return
+    } else {
+      registerAPI({ name, email, password })
     }
   }
 
