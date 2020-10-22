@@ -3,7 +3,7 @@ import Head from 'next/head'
 
 import Layout from '../components/layout'
 
-function HomePage() {
+function AboutPage() {
   return (
     <Layout>
       <Head>
@@ -15,4 +15,4 @@ function HomePage() {
   )
 }
 
-export default HomePage
+export default AboutPage

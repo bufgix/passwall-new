@@ -57,7 +57,7 @@ export function PaidCard() {
           {PAID_TIER.map((item) => {
             const Icon = item.icon
             return (
-              <li>
+              <li key={item.name}>
                 <Icon />
                 <Text tag="p" theme="medium">
                   {item.name}

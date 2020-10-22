@@ -9,6 +9,8 @@ import * as Icons from 'heroicons-react'
 
 import Text from '../text'
 import Button from '../button'
+import Api from '../../api'
+import CryptoJS from 'crypto-js'
 
 export const FORM_TYPES = {
   FREE: 'FREE',
@@ -62,9 +64,24 @@ export default function Form({ formType = FORM_TYPES.FREE }) {
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(schema)
   })
-  const onSubmit = (data) => {
-    console.log(errors)
-    console.log(data)
+  const onSubmit = ({ name, email, password }) => {
+    if (formType == FORM_TYPES.FREE) {
+      Api.post(`/auth/signup?api_key=${process.env.NEXT_PUBLIC_API_KEY}`, {
+        name,
+        email,
+        master_password: CryptoJS.SHA256(password).toString()
+      })
+        .then((data) => {
+          router.push('/thankyou')
+        })
+        .catch((err) => {
+          if (err.response.status === 400) {
+            console.log(err.response.data.errors)
+          } else {
+            console.log('Server Error')
+          }
+        })
+    }
   }
 
   return (

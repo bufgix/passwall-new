@@ -10,7 +10,7 @@ import BottomBar from '../components/bottombar'
 import Text from '../components/text'
 import Card, { FreeCard, PaidCard } from '../components/card'
 
-function HomePage() {
+function FreePage() {
   const store = useContext(StoreContext)
 
   return (
@@ -31,4 +31,4 @@ function HomePage() {
   )
 }
 
-export default HomePage
+export default FreePage
