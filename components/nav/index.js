@@ -17,12 +17,14 @@ export function MobileNav() {
   return (
     <nav className={styles.mobileNav}>
       <div className={styles.navHead}>
-        <img
-          className={styles.logo}
-          src="/images/passwall-logo.png"
-          alt="logo"
-          width="150"
-        />
+        <Wlink href="/">
+          <img
+            className={styles.logo}
+            src="/images/passwall-logo.png"
+            alt="logo"
+            width="150"
+          />
+        </Wlink>
         <div className={styles.hamburger} onClick={animateMobileNav}>
           <div className={styles.line}></div>
           <div className={styles.line}></div>
