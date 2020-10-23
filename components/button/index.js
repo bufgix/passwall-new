@@ -3,9 +3,18 @@ import cn from 'classnames'
 
 import styles from './index.module.scss'
 
-export function DownloadButton({ children, className, ...props }) {
+export function DownloadButton({
+  children,
+  className,
+  disable = false,
+  ...props
+}) {
   return (
-    <button type="button" className={cn(styles.downloadButton, className)} {...props}>
+    <button
+      type="button"
+      className={cn(styles.downloadButton, className, { disable })}
+      {...props}
+    >
       {children}
     </button>
   )

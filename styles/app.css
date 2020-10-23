@@ -80,7 +80,62 @@ a {
   }
 }
 
-.Toastify__toast{
+.thankyou {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .platforms {
+    margin-top: 100px;
+    font-weight: 500;
+  }
+
+  .downloadSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 15px;
+
+    button {
+      margin-right: 10px;
+      margin-bottom: 20px;
+
+      @media (--d) {
+        margin-bottom: 0px;
+      }
+    }
+
+    @media (--d) {
+      flex-direction: row;
+    }
+  }
+
+  .content {
+    max-width: 90%;
+
+    @media (--d) {
+      max-width: 95%;
+    }
+
+    @media (--md) {
+      max-width: 60%;
+    }
+  }
+  .soonText {
+    margin-top: 30px;
+    color: var(--c-dark-30);
+  }
+  .soon {
+    width: 50%;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+  }
+}
+
+.Toastify__toast {
   display: flex;
   flex-direction: column;
   padding: 16px 24px 0px 24px;

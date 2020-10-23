@@ -43,6 +43,29 @@ export const DOWLOAD_LINKS = [
   }
 ]
 
+export const COMING_SOON = [
+  {
+    name: 'Chrome',
+    link: '#'
+  },
+  {
+    name: 'IOS',
+    link: '#'
+  },
+  {
+    name: 'Safari',
+    link: '#'
+  },
+  {
+    name: 'Windows',
+    link: '#'
+  },
+  {
+    name: 'Linux',
+    link: '#'
+  }
+]
+
 export const FREE_TIER = [
   {
     name: 'Logins',

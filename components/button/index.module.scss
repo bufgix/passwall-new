@@ -39,4 +39,9 @@
   a {
     margin-right: 10px;
   }
+
+  &:global(.disable) {
+    border-color: var(--c-dark-40);
+    border-radius: 8px;
+  }
 }
